@@ -28,3 +28,13 @@ Debugging tool:
 When the server is NOT running, $ iex -S mix phoenix.server
 Opens the server in your terminal
 Discuss.PageView.render("index.html")
+
+The Model Layer in Phoenix
+We have to tell Phx what kind of data to expect from the database
+Phx land (topic model) <-> Postgres land (table of topic models)
+Database migrations are how we give instructions to Postgres about its tables and types of data 
+
+To generate a migration:
+mix ecto.gen.migration add_topics
+To run a migration:
+mix ecto.migrate
