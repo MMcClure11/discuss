@@ -38,3 +38,13 @@ To generate a migration:
 mix ecto.gen.migration add_topics
 To run a migration:
 mix ecto.migrate
+
+To Visualize the Tables:
+Download: https://eggerapps.at/postico/ 
+
+Problem | Solution
+Need a new URL for the user to visit | Add a new route in router file
+New routes must map to a method in a controller | Add new method in a controller to handle request. Method will decide what to do with the request
+Need to show a form to the user | Make a new template that contains the form
+Need to translate data in the form to something that can be saved in the database | create a 'Topic' model that can translate raw data from the form into something that can be saved in the database
+The controller and view that we currently have are related to a 'Page' but we are making stuff related to a 'Topic' | Make a new controller and view to handle everything related to 'Topics'
