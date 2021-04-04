@@ -48,3 +48,7 @@ New routes must map to a method in a controller | Add new method in a controller
 Need to show a form to the user | Make a new template that contains the form
 Need to translate data in the form to something that can be saved in the database | create a 'Topic' model that can translate raw data from the form into something that can be saved in the database
 The controller and view that we currently have are related to a 'Page' but we are making stuff related to a 'Topic' | Make a new controller and view to handle everything related to 'Topics'
+
+Router.ex
+    get "/topics/new", TopicController, :new
+Phx follows restful conventions
