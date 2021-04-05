@@ -52,3 +52,14 @@ The controller and view that we currently have are related to a 'Page' but we ar
 Router.ex
     get "/topics/new", TopicController, :new
 Phx follows restful conventions
+
+Reusing Code in Phoenix Applications
+THese keywords are Elixir keywords
+Keyword | Purpose
+import | Take all the functions out of this module and give them to this other module
+alias | Give me a shortcut to this other module, my fingers are lazy
+use | I want to do some really fancy setup
+
+in topic_controller.ex
+  use Discuss.Web, :controller
+this is similiar to class inheritance in OOP - how code sharing is happening
