@@ -108,3 +108,19 @@ iex(4)> Discuss.Topic.changeset(struct, %{})
 >
 
 Changeset + Form Template = Usable Form
+
+To get access to the params, since "topic" is a string instead of an atom, can't call params.topic so use pattern matching instead
+iex(3)> params = %{"topic" => "asdf"}
+%{"topic" => "asdf"}
+iex(4)> params.topic
+** (KeyError) key :topic not found in: %{"topic" => "asdf"}
+
+iex(4)> params["topic"]
+"asdf"
+iex(5)> %{"topic" => string} = params
+%{"topic" => "asdf"}
+iex(6)> string
+"asdf"
+
+To see route information:
+$ mix phoenix.routes
