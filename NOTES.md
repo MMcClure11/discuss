@@ -67,3 +67,6 @@ this is similiar to class inheritance in OOP - how code sharing is happening
 conn: short for connection, it is a struct
 it's the focal point of the phoenix application
 represents both the incoming and the outgoing request
+
+Model must do two things
+1. have a schema so it knows exactly what to expect from postgres
