@@ -78,3 +78,31 @@ params - hash that contains the properties we want to update the struct with
 cast - produces a changeset, the object that records the updates in the database
 validators - adds errors to changeset
 changeset - knows the data we're trying to save and whether or not there are validation issues with it
+The thing that we actually save to postgres is the acutal changeset object returned at the end of the changeset function
+
+To check the validations:
+$ iex -S mix
+iex(1)> struct = %Discuss.Topic{}
+%Discuss.Topic{
+  __meta__: #Ecto.Schema.Metadata<:built, "topics">,
+  id: nil,
+  title: nil
+}
+iex(2)> params = %{title: "Great JS"}
+%{title: "Great JS"}
+iex(3)> Discuss.Topic.changeset(struct, params)
+#Ecto.Changeset<
+  action: nil,
+  changes: %{title: "Great JS"},
+  errors: [],
+  data: #Discuss.Topic<>,
+  valid?: true
+>
+iex(4)> Discuss.Topic.changeset(struct, %{})   
+#Ecto.Changeset<
+  action: nil,
+  changes: %{},
+  errors: [title: {"can't be blank", []}],
+  data: #Discuss.Topic<>,
+  valid?: false
+>
