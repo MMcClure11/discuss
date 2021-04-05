@@ -63,3 +63,7 @@ use | I want to do some really fancy setup
 in topic_controller.ex
   use Discuss.Web, :controller
 this is similiar to class inheritance in OOP - how code sharing is happening
+
+conn: short for connection, it is a struct
+it's the focal point of the phoenix application
+represents both the incoming and the outgoing request
