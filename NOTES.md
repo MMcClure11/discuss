@@ -70,3 +70,11 @@ represents both the incoming and the outgoing request
 
 Model must do two things
 1. have a schema so it knows exactly what to expect from postgres
+2. Add validations
+
+Validations
+struct - represents a record in the database, a hash that contains some data
+params - hash that contains the properties we want to update the struct with
+cast - produces a changeset, the object that records the updates in the database
+validators - adds errors to changeset
+changeset - knows the data we're trying to save and whether or not there are validation issues with it
