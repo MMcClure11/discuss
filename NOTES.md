@@ -106,3 +106,5 @@ iex(4)> Discuss.Topic.changeset(struct, %{})
   data: #Discuss.Topic<>,
   valid?: false
 >
+
+Changeset + Form Template = Usable Form
