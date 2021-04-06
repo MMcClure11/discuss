@@ -201,3 +201,8 @@ $ source config/.env
 To access the 'current user'
 conn.assigns 
 but to alter it use the assign function
+
+To check if association has been added successfully:
+iex -S mix
+iex(1)> Discuss.Repo.get(Discuss.User, 1)    
+note: phoenix does not automatically load up associations
