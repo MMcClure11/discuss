@@ -28,6 +28,7 @@ defmodule Discuss.Router do
   scope "/auth", Discuss do 
     pipe_through :browser
 
+    get "/signout", AuthController, :signout #breaks 'restful', often is a delete request, but this requires a form
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
