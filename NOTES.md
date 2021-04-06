@@ -197,3 +197,7 @@ System.get_env("FIRST_VARIABLE")
 
 in terminal which in project directory run
 $ source config/.env
+
+To access the 'current user'
+conn.assigns 
+but to alter it use the assign function
