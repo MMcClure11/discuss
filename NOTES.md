@@ -186,3 +186,14 @@ defmodule Discuss.TopicController do
 end
 
 -------------------------------------------
+
+### OAuth Configuration with .env variables
+Found solution from [desar00](https://elixirforum.com/t/how-to-set-environment-variables-in-dev-exs/18552/5)
+
+Create .env file in config folder
+set up variables using:
+export FIRST_VARIABLE=somevariable
+System.get_env("FIRST_VARIABLE")
+
+in terminal which in project directory run
+$ source config/.env
