@@ -26,4 +26,11 @@ defmodule Discuss.TopicController do
         render conn, "new.html", changeset: changeset
     end
   end
+
+  def edit(conn, %{"id" => topic_id}) do 
+    topic = Repo.get(Topic, topic_id) #gets a single record from the Topic table with that id
+    changeset = Topic.changeset(topic)
+
+    render conn, "edit.html", changeset: changeset, topic: topic
+  end
 end
