@@ -1,5 +1,15 @@
 # Discuss
 
+## About
+
+Discuss is a an app for posting discussion topics and adding comments to those topics. A User that is not logged in can see the list of topics and visit topics to see the comments. Once logged in a User can create topics and add comments to topics. 
+
+![Create a Topic](create_topic.png)
+
+![Not Permitted to Edit](cannot_edit.png)
+
+![Comments Display User](comments_email.png)
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
