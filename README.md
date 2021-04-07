@@ -4,6 +4,8 @@
 
 Discuss is a an app for posting discussion topics and adding comments to those topics. A User that is not logged in can see the list of topics and visit topics to see the comments. Once logged in a User can create topics and add comments to topics. 
 
+To resolve authentication issue it uses OmniAuth with Github and utilizes Web Sockets to allow users subscribed to a channel the ability to see newly added comments.
+
 ![Create a Topic](create_topic.png)
 
 ![Not Permitted to Edit](cannot_edit.png)
