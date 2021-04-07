@@ -65,6 +65,8 @@ channel.join()
     console.log("Unable to join", resp);
   });
 
+  channel.on(`comments:${topicId}:new`, renderComment);
+
   document.querySelector('button').addEventListener('click', () => {
     const content = document.querySelector('textarea').value;
 
@@ -74,14 +76,24 @@ channel.join()
 
 function renderComments(comments) {
   const renderedComments = comments.map(comment => {
-    return `
-      <li class="collection-item">
-        ${comment.content}
-      </li>
-    `;
+    return commentTemplate(comment)
   });
 
   document.querySelector('.collection').innerHTML = renderedComments.join('');
+}
+
+function renderComment(event) {
+  const renderedComment = commentTemplate(event.comment);
+
+  document.querySelector('.collection').innerHTML += renderedComment
+}
+
+function commentTemplate(comment) {
+  return `
+    <li class="collection-item">
+      ${comment.content}
+    </li>
+  `;
 }
 
 window.createSocket = createSocket;
